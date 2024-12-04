@@ -70,5 +70,20 @@ func resourceCloudflareTeamsLocationSchema() map[string]*schema.Schema {
 			Computed:    true,
 			Description: "IP to direct all IPv4 DNS queries to.",
 		},
+		"ipv4_destination_backup": {
+			Type:        schema.TypeString,
+			Computed:    true,
+			Description: "Backup IP to direct all IPv4 DNS queries to.",
+		},
+		"dns_destination_ips_id": {
+			Type:     schema.TypeString,
+			Computed: true,
+			Optional: true,
+			Description: "The identifier of the pair of IPv4 addresses assigned to this location. " +
+				"When creating a location, if this field is absent or set with null, the pair of " +
+				"shared IPv4 addresses (0e4a32c6-6fb8-4858-9296-98f51631e8e6) is auto-assigned. When " +
+				"updating a location, if the field is absent or set with null, the pre-assigned pair " +
+				"remains unchanged.",
+		},
 	}
 }

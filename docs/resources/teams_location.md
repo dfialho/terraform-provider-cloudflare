@@ -42,6 +42,7 @@ resource "cloudflare_teams_location" "example" {
 - `client_default` (Boolean) Indicator that this is the default location.
 - `ecs_support` (Boolean) Indicator that this location needs to resolve EDNS queries.
 - `networks` (Block Set) The networks CIDRs that comprise the location. (see [below for nested schema](#nestedblock--networks))
+- `dns_destination_ips_id` (String) ID of the pair of IPv4 assigned to this location.
 
 ### Read-Only
 
@@ -50,6 +51,7 @@ resource "cloudflare_teams_location" "example" {
 - `id` (String) The ID of this resource.
 - `ip` (String) Client IP address.
 - `ipv4_destination` (String) IP to direct all IPv4 DNS queries to.
+- `ipv4_destination_backup` (String) Backup IP to direct all IPv4 DNS queries to.
 - `policy_ids` (List of String)
 
 <a id="nestedblock--networks"></a>

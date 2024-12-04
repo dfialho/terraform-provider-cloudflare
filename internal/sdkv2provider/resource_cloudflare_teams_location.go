@@ -83,6 +83,12 @@ func resourceCloudflareTeamsLocationRead(ctx context.Context, d *schema.Resource
 	if err := d.Set("ipv4_destination", location.IPv4Destination); err != nil {
 		return diag.FromErr(fmt.Errorf("error parsing Location IPv4 destination"))
 	}
+	if err := d.Set("ipv4_destination_backup", location.IPv4Destination); err != nil {
+		return diag.FromErr(fmt.Errorf("error parsing Location IPv4 destination Backup"))
+	}
+	if err := d.Set("dns_destination_ips_id", location.IPv4Destination); err != nil {
+		return diag.FromErr(fmt.Errorf("error parsing destination IPs ID"))
+	}
 	if err := d.Set("client_default", location.ClientDefault); err != nil {
 		return diag.FromErr(fmt.Errorf("error parsing Location client default"))
 	}
